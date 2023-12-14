@@ -1,0 +1,123 @@
+.signupContainer {
+    font-size: 1rem;
+    font-family: Poppins-Medium;
+    text-decoration: none;
+    color: black; 
+    background: #EAF5F8;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupFormContainer {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+        0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 /12%);
+}
+
+.left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #C52D2A;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.left h1 {
+    margin-top: 0;
+    color: white;
+    font-size: 35px;
+    align-self: center;
+}
+
+.right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.back-btn1 {
+    border: none;
+    outline: none;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 10px; 
+    left: 10px; 
+  }
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+}
+
+.form-container h1{
+    font-size: 40px;
+    margin-top: 0;
+}
+
+.input {
+    outline: none;
+    border: none;
+    width: 25rem;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #edf5f3;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.error-msg {
+    width: 370px;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    background-color: #f34646;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.white-btn, .green-btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    background-color: white;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.green-btn {
+    background-color: #C52D2A;
+    color: white;
+    margin: 10px
+}
+
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(../../../public/fonts/Poppins-Medium.ttf);
+}

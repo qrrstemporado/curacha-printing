@@ -1,0 +1,176 @@
+/* Add this CSS rule to make the font color black for all elements */
+input,
+label,
+.vatable-cost,
+.vat-amount,
+.total-amount,
+.price-per-booklet,
+.description {
+  color: black;
+  font-family: Poppins-Regular;
+}
+
+.formsContainer {
+    font-family: Poppins-Bold;
+    position: relative;
+    text-decoration: none;
+    color: black; 
+    background: #EAF5F8;
+    padding-top: 1rem; /* Padding to text */
+    height: auto;
+    min-height: 65rem; /* height of background page*/
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+.main-container {
+  display: flex;
+  background-color: white;
+  padding: 50px;
+  margin: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 70%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  align-self: center;
+  
+  
+}
+
+.price-calc-container {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 40%; /* Adjust the width as needed */
+  height: auto;
+  font-size: 12pt;
+  margin-left: 400px;
+  margin-right: 10px; 
+  border-radius: 10px;
+
+}
+
+.product-image {
+  width: 650px; /* Adjust the width as needed */
+  height: 380px; /* Adjust the height as needed */
+  border-radius: 10px;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: medium;
+}
+
+.total-container {
+  text-align: right;
+  margin-top: 0.6rem;
+  padding: 5px;
+  word-spacing: 3px;
+  justify-content: space-between;
+ 
+}
+
+.total-container span {
+  flex: 1;
+  font-weight: normal;
+}
+.input-group {
+  display: flex;
+  margin-bottom: 10px;
+  padding: 3px;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: right;
+  font-family: Poppins-Regular;
+}
+
+.input-group label {
+  flex: 1;
+  margin-bottom: 5px;
+  font-family: Poppins-Regular;
+}
+
+.input-box {
+  border: 1px solid #290000;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-family: Poppins-Regular;
+}
+
+.input-group input,
+.input-group {
+  flex: 2;
+  padding: 10px;
+}
+
+
+
+.input-group input {
+  border: 1px solid #000000;
+}
+.product-info {
+  width: 30%; /* Adjust the width as needed for the product information section */
+  padding: 20px;
+}
+
+.red-title {
+  color: rgb(193, 28, 28);
+  margin-left: 3.2rem;
+  
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(../../../../public/fonts/Poppins-Bold.ttf);
+}
+
+.description {
+  margin-top: 20px;
+  font-size: small;
+}
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(../../../../public/fonts/Poppins-Medium.ttf);
+}
+
+.price-calc-container .input-box {
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%; /* Adjust this to the width of your image container */
+  max-width: 90%; /* Make sure the container doesn't exceed the screen width */
+ 
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 15px; /* Increase the padding for spacing */
+}
+
+.product-image {
+  max-width: 200%; /* Ensure the image fits within the container */
+  max-height: 150%; /* Ensure the image fits within the container */
+
+  border-radius: 10px;
+}
+
+
+.nav-button.left {
+  left: 0;
+}
+
+.nav-button.right {
+  right: 0;
+}

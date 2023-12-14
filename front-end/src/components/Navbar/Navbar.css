@@ -1,0 +1,116 @@
+.navbar {
+    height: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(to bottom, #FFFFFF, #EAF5F8);
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(../../../public/fonts/Poppins-Medium.ttf);
+}
+
+.logo {
+    object-fit: cover;
+    max-height: 8rem; /* Set a maximum height */
+    max-width: 11rem; /* Set a maximum width */
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.icon {
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    margin-right: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.menuItem {
+    margin: 4rem;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1rem;
+    font-family: Poppins-Medium;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    vertical-align: middle;
+}
+
+.menuItem:hover::before {
+    width: 100%;
+}
+
+.menuItem:hover {
+    color: rgb(0, 122, 128);
+}
+
+.nav-btn {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .nav-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: black;
+        margin-right: 1rem;
+        
+    }
+
+    .nav-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        background: linear-gradient(to bottom, #FFFFFF, #EAF5F8);
+        display: none;      /*hides menu bar */
+    }
+
+    .menu.responsive_nav {
+        display: flex;  /*shows menu bar */
+    }
+
+    .menuItem {
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .icon {
+        display: none;  /*hides the icon when the screen is small */
+    }
+    .profile-icon {
+        margin-right: 1rem; /*for the profile icon to show when screen is small*/
+        color: black;
+        cursor: pointer;
+    }
+
+}

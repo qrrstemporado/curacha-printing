@@ -1,0 +1,18 @@
+.quoteContainer {
+    font-size: 1rem;
+    font-family: Poppins-Medium;
+    position: relative;
+    text-decoration: none;
+    color: black; 
+    text-align: center;
+    background: #EAF5F8;
+    padding: 5rem; /* Padding to text */
+    height: auto;
+    min-height: 50rem; /* Hhight of background page*/
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(../../../public/fonts/Poppins-Medium.ttf);
+}
