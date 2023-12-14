@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = 'https://curacha-printing-backend.onrender.com/api/auth/login';
+      const url = 'http://localhost:4000/api/auth/login';
       const { data: res } = await axios.post(url, data);
       localStorage.setItem('token', res.data);
       navigate('/profile');  // Use navigate for navigation

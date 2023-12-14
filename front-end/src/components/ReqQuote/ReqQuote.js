@@ -68,7 +68,7 @@ const ReqQuote = () => {
     
     try {
       // Make a POST request to your backend endpoint
-      const response = await fetch('https://curacha-printing-backend.onrender.com/api/quote', {
+      const response = await fetch('http://localhost:4000/api/quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ const ReqQuote = () => {
 
     try {
       // Make a POST request to your backend endpoint
-      const response = await fetch('https://curacha-printing-backend.onrender.com/api/quote', {
+      const response = await fetch('http://localhost:4000/api/quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
