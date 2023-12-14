@@ -10,7 +10,7 @@ const AdminProfile = () => {
     // Fetch quotes from your backend API
     const fetchQuotes = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/quote');
+        const response = await fetch('https://curacha-printing-backend.onrender.com/api/quote');
         if (response.ok) {
           const data = await response.json();
           setQuotes(data);
