@@ -9,6 +9,8 @@ const Signup = () => {
         lastName: '',
         email: '',
         password: '',
+        userType: 'user', // Default to 'user'
+        secretKey: '',
     });
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -20,20 +22,35 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = 'http://localhost:4000/api/users';
-            const { data: res } = await axios.post(url, data);
-            navigate('/login');
-            console.log(res.message);
+          const url = 'http://localhost:4000/api/users';
+      
+          // Check if the user is an admin and validate the secret key
+          if (data.userType === 'admin' && data.secretKey !== 'CPE025SOFTDES') {
+            setError('Invalid Admin Credentials');
+            return;
+          }
+      
+          // Prepare the data to be sent to the server
+          const postData = {
+            ...data,
+            // Omit secretKey from the data if it's not admin
+            ...(data.userType === 'admin' ? {} : { secretKey: undefined }),
+          };
+      
+          const { data: res } = await axios.post(url, postData);
+          navigate('/login');
+          console.log(res.message);
         } catch (error) {
-            if (
-                error.response &&
-                error.response.status >= 400 &&
-                error.response.status <= 500
-            ) {
-                setError(error.response.data.message);
-            }
+          if (
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status <= 500
+          ) {
+            setError(error.response.data.message);
+          }
         }
-    };
+      };
+      
 
     return (
         <div className="signupContainer">
@@ -54,6 +71,36 @@ const Signup = () => {
                 <div className="right">
                     <form className="form-container" onSubmit={handleSubmit}>
                         <h1>Create Account</h1>
+                        <div className="radio-container">
+                            <p>Register as</p>
+                            <input
+                                type="radio"
+                                name="userType"
+                                value="user"
+                                checked={data.userType === 'user'}
+                                onChange={handleChange}
+                            />{" "}
+                            User
+                            <input
+                                type="radio"
+                                name="userType"
+                                value="admin"
+                                checked={data.userType === 'admin'}
+                                onChange={handleChange}
+                            />{" "}
+                            Admin
+                        </div>
+                        {data.userType === 'admin' && (
+                            <input
+                            type="text"
+                            placeholder="Secret Key"
+                            name="secretKey"
+                            onChange={handleChange}
+                            value={data.secretKey}
+                            required={data.userType === 'admin'}
+                            className="input"
+                            />
+                        )}
                         <input
                             type="text"
                             placeholder="First Name"
