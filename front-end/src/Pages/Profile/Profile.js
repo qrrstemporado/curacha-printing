@@ -1,19 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import NavBar from '../../components/Navbar/Navbar';
 import FooterPage from '../FooterPage/FooterPage';
 import './Profile.css';
 
 const Profile = () => {
-  const navigate = useNavigate(); // Get the navigate function from react-router-dom
-
-  const handleLogout = () => {
-    // Add logic to handle the logout action, such as clearing user session.
-    // For example, you might want to clear tokens, user data, etc.
-
-    // Redirect to the home page ("/") after logout
-    navigate('/');
-  };
   return (
     <div>
       <NavBar />
@@ -22,10 +12,6 @@ const Profile = () => {
           <div className="quote-header">
             <label>Welcome, Alexia Roque!</label>
             <p>Email: roquealexia09@gmail.com</p>
-            {/* Logout Button */}
-            <button className="logout-button" onClick={handleLogout}>
-              Logout
-            </button>
           </div>
           <div className="quote-body">
             <div className="quote-section">

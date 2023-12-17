@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -9,7 +9,7 @@ const Login = () => {
     password: '',
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate();  // Use useNavigate instead of useHistory
+  const navigate = useNavigate();
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -20,17 +20,17 @@ const Login = () => {
     try {
       const url = 'http://localhost:4000/api/auth/login';
       const { data: res } = await axios.post(url, data);
-      localStorage.setItem('token', res.data);
       
+      // Set the received token in local storage
+      localStorage.setItem('token', res.data);
 
       // Display alert if the user logs in as an admin
       if (res.userType === 'admin') {
-        navigate('/admin-profile'); 
+        navigate('/admin-profile');
         window.alert('Admin logged in successfully!');
-        
       } else {
         window.alert('User logged in successfully!');
-        navigate('/profile');  // Redirect to the user profile page
+        navigate('/profile');
       }
     } catch (error) {
       if (
@@ -41,7 +41,7 @@ const Login = () => {
         setError(error.response.data.message);
       }
     }
-  };  
+  };
 
   return (
     <div className="loginContainer">
