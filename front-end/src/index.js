@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App';
 import Login from './components/Login/Login';
-import Signup from './components/Signup/Signup'; // Import the Signup component
+import Signup from './components/Signup/Signup';
 import Profile from './Pages/Profile/Profile';
 import Billing from './Pages/Products/Invoices/Billing Invoice/Billing-Invoice';
 import Cash from './Pages/Products/Invoices/Cash Invoice/Cash-Invoice';
@@ -15,12 +15,12 @@ import Acknowledgement from './Pages/Products/Receipts/Acknowledgement Receipts/
 import Forms from './Pages/Products/Forms/Forms';
 import JobOrder from './Pages/Products/JobOrder/Job-Order';
 import ReqQuote from './components/ReqQuote/ReqQuote';
-
+import AdminProfile from './Pages/AdminProfile/Admin';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "quote",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "signup", // Add a route for Sign Up
+    path: "signup",
     element: <Signup />,
   },
   {
@@ -52,27 +52,31 @@ const router = createBrowserRouter([
   },
   {
     path: "acknowledgement-receipt",
-    element: <Acknowledgement/>,
+    element: <Acknowledgement />,
   },
   {
     path: "collection-receipt",
-    element: <Collection/>,
+    element: <Collection />,
   },
   {
     path: "official-receipt",
-    element: <Official/>,
+    element: <Official />,
   },
   {
     path: "delivery-receipt",
-    element: <Delivery/>,
+    element: <Delivery />,
   },
   {
     path: "forms",
-    element: <Forms/>,
+    element: <Forms />,
   },
   {
     path: "job-order",
-    element: <JobOrder/>,
+    element: <JobOrder />,
+  },
+  {
+    path: "admin-profile", // Add a route for the AdminProfile component
+    element: <AdminProfile />,
   },
 ]);
 

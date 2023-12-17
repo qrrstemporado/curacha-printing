@@ -4,7 +4,7 @@ const quoteSchema = new mongoose.Schema({
   title: String,
   productSelection: String,
   quantity: Number,
-  size: Number,
+  size: String,
   noOfPly: Number,
   paperSize: String,
   paperType: String,

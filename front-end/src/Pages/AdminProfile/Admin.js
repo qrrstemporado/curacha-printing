@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import FooterPage from '../FooterPage/FooterPage';
 import './Admin.css';
@@ -7,23 +7,23 @@ const AdminProfile = () => {
   const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    // Fetch quotes from your backend API
-    const fetchQuotes = async () => {
-      try {
-        const response = await fetch('http://localhost:4000/api/quote');
-        if (response.ok) {
-          const data = await response.json();
-          setQuotes(data);
-        } else {
-          console.error('Failed to fetch quotes');
-        }
-      } catch (error) {
-        console.error('Error fetching quotes:', error);
-      }
-    };
-
+    // Fetch quotes from the server when the component mounts
     fetchQuotes();
   }, []);
+
+  const fetchQuotes = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/quote');
+      if (response.ok) {
+        const data = await response.json();
+        setQuotes(data);
+      } else {
+        console.error('Failed to fetch quotes');
+      }
+    } catch (error) {
+      console.error('Error fetching quotes:', error);
+    }
+  };
 
   return (
     <div>
@@ -40,6 +40,7 @@ const AdminProfile = () => {
                 <div className="quote-detail">Name: {quote.name}</div>
                 <div className="quote-detail">Email: {quote.email}</div>
                 <hr />
+
                 <div className="quote-detail">Title: {quote.title}</div>
                 <div className="quote-detail">Product Selection: {quote.productSelection}</div>
                 <div className="quote-detail">Quantity: {quote.quantity}</div>
@@ -48,10 +49,9 @@ const AdminProfile = () => {
                 <div className="quote-detail">Paper Size: {quote.paperSize}</div>
                 <div className="quote-detail">Paper Type: {quote.paperType}</div>
                 <div className="quote-detail">Color Printing: {quote.colorPrinting}</div>
-                <div className="quote-detail">Color of Ply: {quote.colorForPly.join(", ")}</div>
-                <div className="quote-detail">
-                  Logo: {quote.logo ? <img src={quote.logo} alt="Uploaded Logo" className="logo-image" /> : "No logo uploaded"}
-                </div>
+                <div className="quote-detail">Color of Ply: {quote.colorForPly.join(', ')}</div>
+                <div className="quote-detail">Logo: {quote.logo ? <img src={quote.logo} alt="Logo" /> : 'No logo uploaded'}</div>
+
                 <div className="quote-price">
                   <span>VATable Cost: {quote.vatableCost}</span>
                   <br />

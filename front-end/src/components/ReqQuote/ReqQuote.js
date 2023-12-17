@@ -26,6 +26,7 @@ const ReqQuote = () => {
     setFormData({
       ...formData,
       [name]: value,
+      [name]: name === "size" ? parseFloat(value) : value,
     });
   };
 
@@ -416,7 +417,7 @@ const ReqQuote = () => {
           <p>Title: {formData.title}</p>
           <p>Product Selection: {formData.productSelection}</p>
           <p>Quantity: {formData.quantity}</p>
-          <p>Size: {formData.size}</p>
+          <p>Size: {parseFloat(formData.size)}</p>
           <p>No. Of Ply: {formData.noOfPly}</p>
           <p>Paper Size: {formData.paperSize}</p>
           <p>Paper Type: {formData.paperType}</p>

@@ -14,4 +14,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+// GET route to fetch all quotes
+router.get('/', async (req, res) => {
+  try {
+    const quotes = await Quote.find();
+    res.json(quotes);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
 module.exports = router;
